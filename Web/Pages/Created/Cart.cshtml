@@ -1,0 +1,29 @@
+﻿@page
+@using Web.DataBase;
+@model Web.Pages.Created.CartModel
+@{
+    var context = new ApplicationDbContext();
+}
+
+<link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
+
+<div class="page_container">
+    <table>
+        @foreach (var carts in context.Cart)
+        {
+            @foreach (var product in carts.Products)
+            {
+                <tr>
+                    <td>
+                        <div class="cart__card">
+                            <img class="product__image" src="~/img/Products/@product.Image" alt="Категория" />
+                            <div>
+                                <label class="product__text">@product.Name </label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+</div>

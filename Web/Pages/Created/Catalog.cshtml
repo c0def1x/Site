@@ -1,0 +1,33 @@
+﻿@page
+@using Web.DataBase;
+@model Web.Pages.Created.CatalogModel
+@{
+    var context = new ApplicationDbContext();
+    int count = context.Categories.Count();
+    int skip = 0;
+}
+
+<link rel="stylesheet" href="~/css/category.css" asp-append-version="true" />
+
+<div class="page_container">
+    <table>
+        @do
+        {
+            <tr>
+                @foreach (var category in context.Categories.Skip(skip).Take(5))
+                {
+                    <td>
+                        <div class="category__card">
+                            <img class="product__image" src="~/img/Products/@category.Image" alt="Категория" />
+                            <div>
+                                <label class="product__text">@category.Name </label>
+                            </div>
+                        </div>
+                    </td>
+                    count--;
+                }
+            </tr>
+            skip += 5;
+        }while(count != 0);
+    </table>
+</div>

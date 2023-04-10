@@ -1,0 +1,30 @@
+﻿body {
+}
+
+.category__card {
+    margin: 15px;
+    height: 300px;
+    width: 250px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.category__card:hover {
+    margin: 10px;
+    height: 310px;
+    width: 260px;
+}
+
+.product__image {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.product__text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}

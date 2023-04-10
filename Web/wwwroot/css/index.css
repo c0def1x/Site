@@ -1,0 +1,65 @@
+﻿body {
+}
+
+.page_container{
+    display: flex;
+}
+
+.product__card {
+    margin: 15px;
+    height: 300px;
+    width: 250px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.product__card:hover {
+    margin: 10px;
+    height: 310px;
+    width: 260px;
+}
+
+.product__image {
+    height: 150px;
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+.product__context{
+    margin: 15px;
+}
+
+.product__totalprice, .product__price {
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+
+.product__totalprice{
+    background-color: green;
+}
+
+.product__price {
+    margin: 0px, 0px, 0px, 10px;
+    background-color: red;
+}
+
+.product_prices{
+    display: flex;
+}
+
+.product__title {
+}
+
+.product__button {
+    display: block;
+    margin: auto;
+}
+
+.product__button:hover {
+    color: white;
+    background-color: blue;
+}
+

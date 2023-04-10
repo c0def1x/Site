@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" href="~/icons/favicon.ico" type="image/x-icon" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <div>
+                    <a class="navbar-brand" asp-area="" asp-page="/Index">
+                        <img class="headerLogo" src="~/img/icons/favicon.ico" alt="icon" />
+                    </a>
+                </div>
+                <button type="submit" class="btn btn-primary header__button">
+                    <a class="nav-link text-white link" asp-area="" asp-page="/Created/Catalog">Каталог</a>
+                </button>
+                <form action="/search" method="get">
+                    <input class="searchPanel" type="text" name="query" placeholder="Поиск" />
+                    <button type="submit" class="btn btn-primary">
+                        <img class="headerIcon" src="~/img/icons/search.svg" alt="Поиск" />
+                    </button>
+                </form>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark link" asp-area="" asp-page="/Index">
+                                <div class="actions-item">
+                                    <img class="headerIcon" src="~/img/icons/profileIcon.ico" alt="Профиль" />
+                                    <p>Профиль</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark link" asp-area="" asp-page="/Created/Favorite">
+                                <div class="actions-item">
+                                    <img class="headerIcon" src="~/img/icons/favoritesIcon.ico" alt="Избранное" />
+                                    <p>Избранное</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark link" asp-area="" asp-page="/Created/Cart">
+                                <div class="actions-item">
+                                    <img class="headerIcon" src="~/img/icons/cartIcon.ico" alt="Корзина" />
+                                    <p>Корзина</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <p>Информация о разработчике</p>
+            <a href="https://vk.com/ivang2002">Vk</a>
+            <a href="https://github.com/c0def1x">GitHub</a>
+            &copy; 2023 - Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

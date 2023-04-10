@@ -1,0 +1,45 @@
+﻿@page
+@using Web.DataBase;
+@model IndexModel
+@{
+    ViewData["Title"] = "Арк-Сан";
+    var context = new ApplicationDbContext();
+    int count = context.Products.Count();
+    int skip = 0;
+}
+
+<link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+
+<div class="page_container">
+    <table>
+        @do
+        {
+            <tr>
+                @foreach (var product in context.Products.Skip(skip).Take(5))
+                {
+                    <td>
+                        <div class="product__card">
+                            <img class="product__image" src="~/img/Products/@product.Image" alt="Продукт" />
+                            <div class="product__context">
+                                <div class="product_prices">
+                                    <label class="product__totalprice">@product.TotalPrice руб</label>
+                                    @if(product.Discount != 0)
+                                    {
+                                        <label class="product__price">@product.Price руб</label>
+                                    }
+                                </div>
+                                <p class="product__title">@product.Name</p>
+                            </div>
+                            <button class="product__button" type="submit" onclick="AddProductToCart">
+                                <a class="nav-link text-dark link" asp-area="" asp-page="/Created/Cart">Купить</a>
+                            </button>
+                        </div>
+                        <br />
+                    </td>
+                    count--;
+                }
+            </tr>
+            skip += 5;
+        }while(count != 0);
+    </table>
+</div>

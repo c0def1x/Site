@@ -1,0 +1,46 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.headerLogo {
+    width: 120px;
+    height: 100px;
+}
+
+.headerIcon {
+    height: 40px;
+    width: 37px;
+    display: block;
+    margin: auto;
+}
+
+.actions-item :hover > img {
+    color: blue;
+}
+
+.actions-item :hover > p {
+    color: blue;
+}
+
+.searchPanel {
+    border: 3px solid blue;
+}
+
+.link :hover {
+    color: blue;
+}
